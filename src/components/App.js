@@ -40,8 +40,8 @@ function App() {
   const addNomi = (movie) =>{
     const newNominationList = [...nominate,movie];
     setNominate(newNominationList);
-    console.log(nominate);
   }
+
   return ( 
     <div className="App">
       <h1>Shoppies</h1>
@@ -50,17 +50,23 @@ function App() {
         <button className="search" type = "submit">Search</button>
         <input className="movie-name" type="text" value={searchMovie} onChange={updateSearch}/>
       </form>
-
-        <div>
-          <h2 className="resultsHeading1">{movies.length===0?"No Results":"Results Found"}</h2>
-          <DisplayMovie movies = {movies} onClickNomi={addNomi} nominateComp = {AddNomination}/>
+        <div class = "layoutMovie d-flex flex-row">
+          <div>
+            <h2 className="resultsHeading">{movies.length===0?"No Results":"Results Found"}</h2>
+            <ul className="list-group">
+              <DisplayMovie movies = {movies} onClickNomi={addNomi} nominateComp = {AddNomination}/>
+            </ul>
+            
+          </div>
+          <div>
+            <h2 className="resultsHeading">Nominations</h2>
+            <ul className="list-group">
+              <DisplayNominations movies = {nominate}/>
+            </ul>
+            
+          </div>
         </div>
 
-
-        <div>
-          <h2 className="resultsHeading2">Nominations</h2>
-          <DisplayNominations movies = {nominate}/>
-        </div>
 
       </div>
   );

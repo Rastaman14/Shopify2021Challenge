@@ -14,7 +14,6 @@
     justify-content: space-around;
     background: white;
     align-items: center;
-    width: 20%;
 }
 
 .nominationsList{
@@ -24,11 +23,9 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    align-items: top;
     justify-content: space-around;
     background: white;
     align-items: center;
-    width: 20%;
 }
 
 .nominate-button{
@@ -44,8 +41,6 @@
 
 .movie-poster{
     border-radius: 10px;
-    height: 70%;
-    width: 70%;
 }
 
 
