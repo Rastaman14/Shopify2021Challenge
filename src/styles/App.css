@@ -7,4 +7,29 @@ body{
 }
   
 
+.resultsHeading1{
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgb(71,71,71);
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: white;
+    align-items: center;
+    width: 20%;
+}
+
+.resultsHeading2{
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgb(71,71,71);
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: white;
+    align-items: center;
+    width: 20%;
+}
 

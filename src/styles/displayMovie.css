@@ -14,7 +14,7 @@
     justify-content: space-around;
     background: white;
     align-items: center;
-    width: 55%;
+    width: 20%;
 }
 
 .nominationsList{
@@ -24,7 +24,7 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: top;
     justify-content: space-around;
     background: white;
     align-items: center;
