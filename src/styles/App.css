@@ -25,3 +25,10 @@ body{
 .cardWidth2 {
     width: 53.5rem;
 }
+
+.movie-name{
+    width: 90rem;
+}
+.input-bar{
+    width: 35rem;
+}

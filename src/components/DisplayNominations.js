@@ -7,10 +7,10 @@ export default function DisplayNominations(props) {
 
     return (
         <>
-            {props.movies.length === 5 ? <div class="alert alert-danger" role="alert">
+            {/* {props.movies.length === 5 ? <div class="header alert alert-danger" role="alert">
                 Maximum 5 Nominations
-        </div> : null
-            }
+        </div> : null 
+            }*/}
             {props.movies.map((movie, index) => (
                 <li key={movie.imdbID} className="list-group-item list-group-item-light m-3 text-dark">
                     <div className="d-flex flex-column align-items-center text-dark">

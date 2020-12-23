@@ -1,26 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default function Options() {
+export default function Options(props) {
+    
+    const updateOpts = () =>{
+        props.optsUpdate(document.getElementById('opts').checked);
+        //console.log("checked: " + document.getElementById('opts').checked)
+    }
+
     return (
-        <div className="d-flex flex-row m-2">
-            <div className="form-check m-2">
-                <input className="form-check-input" type="radio" name="Poster" id="poster-id" value=""/>
-                <label className="form-check-label" for="Poster">
-                    Show Poster
-                </label>
+        <form onChange={updateOpts}>
+            <div>
+                <input type="checkbox" id="opts"/>
+                <label className="w-75" for="opts">Show Poster</label>
             </div>
-            <div className="form-check m-2">
-                <input className="form-check-input" type="radio" name="Plot" id="plot-id" value="" />
-                <label className="form-check-label" for="exampleRadios2">
-                    Show Plot
-                </label>
-            </div>
-            <div className="form-check m-2">
-                <input className="form-check-input" type="radio" name="Rating" id="rating-id" value=""/>
-                <label className="form-check-label" for="Rating">
-                    Showing Rating
-            </label>
-            </div>
-        </div>
+        </form>
     )
 }

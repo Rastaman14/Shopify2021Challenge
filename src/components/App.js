@@ -12,6 +12,13 @@ function App() {
   const [searchMovie, setSearch] = useState("");
   const [query, setQuery] = useState('');
   const [alert, setAlert] = useState(true);
+  const [checkState, setStates] = useState([false, false, false]);
+  const [opts, setOpts] = useState(false);
+
+  const getOtps = (value) => {
+    setOpts(value);
+
+  }
 
   const getMovie = async (query) => {
     const response = await fetch(`https://www.omdbapi.com/?apikey=${APP_key}&s=${query}`);
@@ -46,8 +53,6 @@ function App() {
     else {
       setAlert(false);
     }
-
-    //console.log(nominate);
   }
 
   const removeNomi = (movie) => {
@@ -61,21 +66,27 @@ function App() {
   return (
     <div className="App d-flex flex-column align-items-center">
       <div className="card cardWidth2 m-2 align-items-center text-center">
+
         <h1>Shoppies</h1>
         <form onSubmit={getSearch} className="movie-title p-2">
           <h2>Movie Title</h2>
-          <button className="search p-1" type="submit">Search</button>
-          <input className="movie-name p-1" type="text" value={searchMovie} onChange={updateSearch} />
+          <div className="input-bar d-flex flex-direction-row align-items-center">
+            <button className="search" type="submit">Search</button>
+            <input className="movie-name" type="text" value={searchMovie} onChange={updateSearch} />
+            <div className="p-1 w-100">
+              <Options optsUpdate={getOtps} />
+            </div>
+          </div>
         </form>
       </div>
-      <div className="card cardWidth">
-        <Options/>
-      </div>
-      <div className="layoutMovie d-flex flex-row p-2">
+      {/* <div className="card cardWidth">
+        <Options />
+      </div> */}
+      <div className="layoutMovie d-flex flex-row p-5">
         <div className="card cardWidth text-center mr-5">
-          <h2 className="m-2">{movies.length === 0 ? "No Results" : "Results for " + ' "' + query +'"'}</h2>
+          <h2 className="m-2">{movies.length === 0 ? "No Results" : "Results for " + ' "' + query + '"'}</h2>
           <ul className="list-group">
-            <DisplayMovie movies={movies} onClickNomi={addNomi} nominateComp={BtnNomination} compareID={nominate} />
+            <DisplayMovie movies={movies} onClickNomi={addNomi} nominateComp={BtnNomination} compareID={nominate} featureSelection={opts} />
           </ul>
         </div>
 
@@ -89,6 +100,9 @@ function App() {
           </div>
         </div>
       </div>
+        {nominate.length === 5 ? <div class="position-fixed w-100 alert alert-danger text-center" role="alert">
+          Maximum 5 Nominations
+        </div> : null}
     </div>
   );
 }
