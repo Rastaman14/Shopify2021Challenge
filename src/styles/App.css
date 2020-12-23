@@ -15,6 +15,13 @@ body{
     background: white;
     align-items: center; 
 }
-.layoutMovie{
-    max-width: 30%;
+/* .layoutMovie{
+    max-width: 40%;
+} */
+.cardWidth {
+    width: 25rem;
+}
+
+.cardWidth2 {
+    width: 53.5rem;
 }

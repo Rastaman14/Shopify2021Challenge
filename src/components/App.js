@@ -3,10 +3,10 @@ import '../styles/App.css';
 import BtnNomination from './BtnNomination';
 import DisplayMovie from './Displaymovie';
 import DisplayNominations from './DisplayNominations';
+import Options from './Options';
 
 function App() {
   const APP_key = '5abc4a1e';
-
   const [movies, setMovies] = useState([]);
   const [nominate, setNominate] = useState([]);
   const [searchMovie, setSearch] = useState("");
@@ -23,7 +23,7 @@ function App() {
   };
 
   //Fetch movie data
-  useEffect(async () => {
+  useEffect(() => {
     getMovie(query);
   }, [query]);
 
@@ -59,34 +59,36 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="card w-25 m-2 p-2 d-flex align-items-center text-center">
+    <div className="App d-flex flex-column align-items-center">
+      <div className="card cardWidth2 m-2 align-items-center text-center">
         <h1>Shoppies</h1>
-        <form onSubmit={getSearch} className="movie-title">
+        <form onSubmit={getSearch} className="movie-title p-2">
           <h2>Movie Title</h2>
-          <button className="search" type="submit">Search</button>
-          <input className="movie-name" type="text" value={searchMovie} onChange={updateSearch} />
+          <button className="search p-1" type="submit">Search</button>
+          <input className="movie-name p-1" type="text" value={searchMovie} onChange={updateSearch} />
         </form>
       </div>
-
-      <div class="layoutMovie d-flex flex-row">
-        <div className="w-100 text-center">
-          <h2 className="card m-2 p-2 d-flex">{movies.length === 0 ? "No Results" : "Results Found"}</h2>
+      <div className="card cardWidth">
+        <Options/>
+      </div>
+      <div className="layoutMovie d-flex flex-row p-2">
+        <div className="card cardWidth text-center mr-5">
+          <h2 className="m-2">{movies.length === 0 ? "No Results" : "Results for " + ' "' + query +'"'}</h2>
           <ul className="list-group">
             <DisplayMovie movies={movies} onClickNomi={addNomi} nominateComp={BtnNomination} compareID={nominate} />
           </ul>
-
         </div>
-        <div className="w-100 text-center">
-          <h2 className="card m-2 p-2">Nominations</h2>
-          <ul className="list-group">
-            <DisplayNominations movies={nominate} onClickNomi={removeNomi} nominateComp={BtnNomination} arrayOfFive={alert} />
-          </ul>
 
+
+        <div className="ml-2">
+          <div className="card text-center cardWidth">
+            <h2 className="m-2">Nominations</h2>
+            <ul className="list-group">
+              <DisplayNominations movies={nominate} onClickNomi={removeNomi} nominateComp={BtnNomination} arrayOfFive={alert} />
+            </ul>
+          </div>
         </div>
       </div>
-
-
     </div>
   );
 }
