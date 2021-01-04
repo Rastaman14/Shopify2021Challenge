@@ -79,9 +79,6 @@ function App() {
           </div>
         </form>
       </div>
-      {/* <div className="card cardWidth">
-        <Options />
-      </div> */}
       <div className="layoutMovie d-flex flex-row p-5">
         <div className="card cardWidth text-center mr-5">
           <h2 className="m-2">{movies.length === 0 ? "No Results" : "Results for " + ' "' + query + '"'}</h2>
