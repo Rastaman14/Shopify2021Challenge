@@ -4,7 +4,7 @@
 React was used to build this application. The basic functionality was provided at [https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#](https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#). Some additioanl changes were implemented to make the UI more appealing. An example would removing bullet points and putting each movie in it's own box. Also, using a checkbox to give the user the option to see the movie poster that they searched for.
 
 ###
-To learn more on how to create a react app click the link below
+To learn more on how to create a react app click the link below\
 [Create React App](https://github.com/facebook/create-react-app).
 
 
